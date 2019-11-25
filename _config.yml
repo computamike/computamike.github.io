@@ -1,3 +1,13 @@
-theme: jekyll-theme-cayman
+---
 title: Mike Hingley's projects
-description: A collection of my projets, and what they are, how they work and why you'd ever want a packer button!
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+theme: jekyll-theme-cayman
+description: A collection of my projets, and what they are, how they work and why
+  you'd ever want a packer button!
