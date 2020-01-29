@@ -86,7 +86,7 @@ Complete! WordPress has been successfully copied to /var/www/html
 
 It seems that the WordPress image is using the entrypoint to copy the Wordpress System onto the container.  If you search google for the phrase `Complete! WordPress has been successfully copied to` it brings you to this eventual file : [https://github.com/docker-library/wordpress/blob/master/docker-entrypoint.sh](https://github.com/docker-library/wordpress/blob/master/docker-entrypoint.sh)
 
-which appears to be the entrypoint for the container, which copies the wordpress files from /usr/src into /var/www/html and then creates a .htaccess file for that folder.
+which appears to be the entrypoint script for the wordpress container.  This script copies the wordpress files from /usr/src into /var/www/html and then creates a .htaccess file for that folder.
 
 Docker has the following guidelines for Best Practice :
 
@@ -94,7 +94,9 @@ https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#entryp
 
 > The best use for ENTRYPOINT is to set the image’s main command, allowing that image to be run as though it was that command (and then use CMD as the default flags).
 
+I'm of the opinion that the existing docker file causes a problem for developers looking to build on top of WordPress, and that the entrypoint for a container shouldn't be used to install the code, the docker file is the place to do that.
 
+Anyone got any ideas ? 
 
 
 
