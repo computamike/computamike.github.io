@@ -72,5 +72,17 @@ Creating wordpress-woocommerce-docker_wordpress_1 ... done
 
 So the script output shows only the script being present - so where's the rest of wordpress?
 
+## Log tracing
+I started looking in desparation in the WordPress container logs - and to my surprise I found this right at the top of the wordpress logs.
 
+```
+WordPress not found in /var/www/html - copying now...
+WARNING: /var/www/html is not empty! (copying anyhow)
+Complete! WordPress has been successfully copied to /var/www/html
+...
+...
 
+```
+
+It seems that the WordPress image is using the entrypoint to copy the Wordpress System onto the container.  No idea what that script is doing - but it seems that if you search github for the phrase `Complete! WordPress has been successfully copied to`
+ 
