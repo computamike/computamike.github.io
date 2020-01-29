@@ -28,8 +28,49 @@ https://github.com/computamike/wordpress-woocommerce-docker
 
 Clone this repo to a folder somewhere, and from that folder execute : 
 
-docker-compose -f "docker-compose.yml" up -d --build
+`docker-compose -f "docker-compose.yml" up -d --build`
 
+Here is my example output : 
+
+```
+docker-compose -f "docker-compose.yml" up -d --build
+Building wordpress
+Step 1/1 : FROM wordpress:latest
+ ---> f790ed010456
+
+Successfully built f790ed010456
+Successfully tagged wordpress-woocommerce-docker_wordpress:latest
+wordpress-woocommerce-docker_db_1 is up-to-date
+wordpress-woocommerce-docker_wordpress_1 is up-to-date
+PS C:\Users\mhingley\code\wordpress-woocommerce-docker> docker-compose -f "docker-compose.yml" up -d --build
+Creating network "wordpress-woocommerce-docker_default" with the default driver
+Creating volume "wordpress-woocommerce-docker_db_data" with default driver
+Building wordpress
+Step 1/4 : FROM wordpress:latest
+ ---> f790ed010456
+Step 2/4 : COPY setup-script.sh /var/www/html/setup-script.sh
+ ---> 0ee70885a5d7
+Step 3/4 : RUN chmod +x /var/www/html/setup-script.sh
+ ---> Running in 0ab0633ca24e
+Removing intermediate container 0ab0633ca24e
+ ---> 2f431181f649
+Step 4/4 : RUN  /var/www/html/setup-script.sh
+ ---> Running in 46290d040a04
+TERM environment variable not set.
+WordPress Directory Contents:
+=============================
+total 4
+-rwxr-xr-x 1 root root 113 Jan 29 12:44 setup-script.sh
+Removing intermediate container 46290d040a04
+ ---> 05a31f88bbaf
+
+Successfully built 05a31f88bbaf
+Successfully tagged wordpress-woocommerce-docker_wordpress:latest
+Creating wordpress-woocommerce-docker_db_1 ... done
+Creating wordpress-woocommerce-docker_wordpress_1 ... done
+```
+
+So the script output shows only the script being present - so where's the rest of wordpress?
 
 
 
