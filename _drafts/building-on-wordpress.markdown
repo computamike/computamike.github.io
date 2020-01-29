@@ -84,5 +84,8 @@ Complete! WordPress has been successfully copied to /var/www/html
 
 ```
 
-It seems that the WordPress image is using the entrypoint to copy the Wordpress System onto the container.  No idea what that script is doing - but it seems that if you search github for the phrase `Complete! WordPress has been successfully copied to`
+It seems that the WordPress image is using the entrypoint to copy the Wordpress System onto the container.  No idea what that script is doing - but it seems that if you search google for the phrase `Complete! WordPress has been successfully copied to` it brings you to this eventual file : https://github.com/docker-library/wordpress/blob/master/docker-entrypoint.sh
+
+
+
  
